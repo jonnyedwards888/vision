@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: transparent;
+}
+
+/* Fade-in animation for the main content */
+#app > div {
+  animation: fadeIn 2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Glowing animated text effect - more subtle and smooth */
+.header-text {
+  font-family: 'Montserrat', 'Poppins', 'Roboto', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  letter-spacing: 0.05em;
+  color: #fff;
+  margin: 0;
+  padding: 2rem 0;
+  text-align: center;
+  text-shadow:
+    0 0 4px #fff,
+    0 0 8px #00ffe7,
+    0 0 16px #00ffe7,
+    0 0 32px #00ffe7;
+  animation: glow 4s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow:
+      0 0 4px #fff,
+      0 0 8px #00ffe7,
+      0 0 16px #00ffe7,
+      0 0 32px #00ffe7;
+  }
+  to {
+    text-shadow:
+      0 0 8px #fff,
+      0 0 16px #00ffe7,
+      0 0 32px #00ffe7,
+      0 0 48px #00ffe7;
+  }
+}
+
+/* Subtle animated overlay for mystique - more smooth and gentle */
+.vision-overlay {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  background: radial-gradient(ellipse at 50% 30%, rgba(0,255,231,0.08) 0%, rgba(0,0,0,0.0) 70%);
+  animation: overlayMove 16s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+}
+
+@keyframes overlayMove {
+  from { background-position: 50% 30%; }
+  to { background-position: 55% 35%; }
+}
